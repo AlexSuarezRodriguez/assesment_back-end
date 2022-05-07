@@ -10,6 +10,11 @@ async function getUserById(id) {
   return user;
 }
 
+async function getUserByEmail(email) {
+  const user = await UserModel.findOne({ email });
+  return user;
+}
+
 async function deleteUser(id) {
   const user = await UserModel.findByIdAndDelete(id);
   return user;
@@ -28,6 +33,7 @@ async function updateUser(id, user) {
 module.exports = {
   getAllUsers,
   getUserById,
+  getUserByEmail,
   deleteUser,
   createUser,
   updateUser,
