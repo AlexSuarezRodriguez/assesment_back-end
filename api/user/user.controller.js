@@ -29,7 +29,7 @@ async function handlerCreateUser(request, response) {
     const user = await createUser(newUser);
     response.status(201).json(user);
   } catch (error) {
-    response.status(404).json({ message: JSON.stringify(error) });
+    response.status(404).json({ message: 'correo o email no cumplen los requisitos' });
   }
 }
 async function handlerUpdateUser(request, response) {
