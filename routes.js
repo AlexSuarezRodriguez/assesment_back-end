@@ -4,7 +4,7 @@ const list = require('./api/list');
 
 function routes(app) {
   app.use('/api/users', user);
-  app.use('/api/lists', list);
+  app.use('/api/favs', list);
   app.use('/auth/local', authLocal);
 }
 
