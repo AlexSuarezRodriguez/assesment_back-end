@@ -118,7 +118,7 @@ describe('users EndPoints', () => {
     test('should respond with a 404 status code if search for id DELETE/:id', async () => {
       const id = '62461f4e8fpoiu';
 
-      const res = await request.get(`/api/users/${id}`);
+      const res = await request.delete(`/api/users/${id}`);
 
       expect(res.statusCode).toEqual(404);
       expect(res.body).toEqual({ message: 'error' });
