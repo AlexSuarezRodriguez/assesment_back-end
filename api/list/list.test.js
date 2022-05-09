@@ -18,7 +18,7 @@ describe('Favs Endpoint', () => {
     await connectDB();
     user = await createUser({
       fullName: 'prueba alexander',
-      email: 'pruebafavs@test.com',
+      email: 'pruebauser@test.com',
       password: 'Alex7573,',
     });
     token = signToken(user.profile);
@@ -56,30 +56,6 @@ describe('Favs Endpoint', () => {
       expect(newFavs.statusCode).toEqual(201);
     });
   });
-
-  // describe('GET /api/favs/:id', () => {
-  //   test('should respond with a 200 status code if search for id GET/:id', async () => {
-  //     const res = await request.get('/api/favs').set('authorization', `Bearer ${token}`);
-  //     const listId = res.body[0]._id;
-  //     const respond = await request.get(`/api/users/${listId}`);
-
-  //     expect(respond.statusCode).toEqual(200);
-  //   });
-
-  //   test('should respond with an array of favs and with date specifics GET/:id', async () => {
-  //     const res = await request.get('/api/users');
-  //     const searchID = res.body[0]._id;
-  //     const respond = await request.get(`/api/users/${searchID}`);
-
-  //     expect(respond.body).toEqual(
-  //       expect.objectContaining({
-  //         email: expect.any(String),
-  //         fullName: expect.any(String),
-  //         password: expect.any(String),
-  //       }),
-  //     );
-  //   });
-  // });
 
   describe('PATCH task', () => {
     test('should respond with a 200 status code PATCH', async () => {
